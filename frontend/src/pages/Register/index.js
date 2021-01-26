@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
-import { useFonts } from 'expo-font'
+import { useFonts } from 'expo-font';
+import { useNavigation } from '@react-navigation/native';
 
 import SignUpSvg from '../../assets/sign up.svg';
 import styles from './styles';
+import { submit } from '../../services/Submit_register';
 
 export default function Register() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const navigation = useNavigation();
 
     const [loaded] = useFonts({
         RobotoCondensed: require('../../assets/fonts/RobotoCondensed-Light.ttf')
@@ -29,14 +35,21 @@ export default function Register() {
                             { fontFamily: 'RobotoCondensed', marginTop: 31, marginRight: 265 }
                             ]}>E-mail</Text>
                             <View style={styles.input}>
-                                <TextInput keyboardType={'email-address'} />
+                                <TextInput 
+                                    keyboardType={'email-address'}
+                                    onChangeText={(text) => setEmail(text)} 
+                                />
                             </View>
                             <Text style={[styles.text_input, { fontFamily: 'RobotoCondensed', marginTop: 42 }]}>Password</Text>
                             <View style={styles.input}>
-                                <TextInput secureTextEntry />
+                                <TextInput 
+                                    secureTextEntry
+                                    onChangeText={(text) => setPassword(text) } 
+                                />
                             </View>
                             <TouchableOpacity
                                 style={styles.button}
+                                onPress={() => submit(email, password, navigation)}
                             >
                                 <Text style={[styles.text_button, { fontFamily: 'RobotoCondensed' }]}>Register</Text>
                             </TouchableOpacity>

@@ -8,9 +8,9 @@ module.exports = {
 
         try {
             await knex('users').insert({email, password: hash});
-            return res.json({email, hash});
+            return res.status(200).send('true');
         } catch (error) {
-            console.log(error);
+            return res.status(500).send('false');
         }
     }
 }
