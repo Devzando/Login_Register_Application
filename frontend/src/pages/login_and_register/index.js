@@ -19,7 +19,7 @@ export default function LoginAndRegister(){
         
 
     return(
-        <View style={styles.fist_container}>
+        <View style={styles.fisrt_container}>
             <View style={styles.container}>
                 <Welcome width={315} height={230}/>
                 <Text style={[styles.text_welcome, {fontFamily: 'RobotoCondensed' }]}>Welcome</Text>

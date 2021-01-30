@@ -24,7 +24,7 @@ module.exports = {
         const HashStatus = decrypt(String(password), result[0].password);
         if(HashStatus){
             const token = GenerateToken(result[0].password, result[0].id);
-            return res.status(200).send({token: token, id: result[0].id});
+            return res.status(200).send({token: token, email: result[0].email, id: result[0].id});
         }
 
         return res.status(500).send('false');

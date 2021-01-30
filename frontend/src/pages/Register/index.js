@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import SignUpSvg from '../../assets/sign up.svg';
 import styles from './styles';
-import { submit } from '../../services/Submit_register';
+import { submitRegister } from '../../services/Submits';
 
 export default function Register() {
     const [email, setEmail] = useState('');
@@ -19,7 +19,7 @@ export default function Register() {
     if (!loaded) return null;
 
     return (
-        <View style={styles.fist_container}>
+        <View style={styles.fisrt_container}>
             <KeyboardAvoidingView behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
                 <ScrollView
                     showsVerticalScrollIndicator={true}
@@ -49,7 +49,7 @@ export default function Register() {
                             </View>
                             <TouchableOpacity
                                 style={styles.button}
-                                onPress={() => submit(email, password, navigation)}
+                                onPress={() => submitRegister(email, password, navigation)}
                             >
                                 <Text style={[styles.text_button, { fontFamily: 'RobotoCondensed' }]}>Register</Text>
                             </TouchableOpacity>

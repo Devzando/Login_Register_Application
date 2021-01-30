@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 import constants from 'expo-constants';
 
 export default StyleSheet.create({
-    fist_container:{
+    fisrt_container:{
         flex: 1,
         backgroundColor: '#C6C2DF'
     },
