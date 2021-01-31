@@ -1,7 +1,7 @@
 <h1 align='center'>Login and Register Aplication</h1>
 
 <h2 align='center'>
-    <img src='frontend/src/assets/login-and-register-video.gif' width='200' height='400'>
+    <img src='frontend/src/assets/login-and-register-video.gif' width='300' height='500'>
 </h2>
 
 ---
