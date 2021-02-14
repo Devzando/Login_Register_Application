@@ -1,4 +1,4 @@
-<h1 align='center'>Login and Register Aplication</h1>
+<h1 align='center'>Login and Register Application</h1>
 
 <h2 align='center'>
     <img src='frontend/src/assets/login-and-register-video.gif' width='300' height='500'>
